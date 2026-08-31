@@ -1,0 +1,61 @@
+{
+    "Group1": [
+        "Shuar",
+        "Achuar",
+        "Campa",
+        "Nahuatl",
+        "Aguaruna",
+        "Quichua"
+    ],
+    "Group2": [
+        "Hungarian",
+        "Slovak",
+        "Czech",
+        "Polish",
+        "Slovene",
+        "Croatian",
+        "Serbian",
+        "Q'eqchi",
+        "Icelandic",
+        "Latvian",
+        "Lithuanian",
+        "Albanian",
+        "Finnish",
+        "Turkish",
+        "Romanian"
+    ],
+    "Group3": [
+        "Romani",
+        "Afrikaans",
+        "Dutch",
+        "English",
+        "Swedish",
+        "Norwegian",
+        "Aukan",
+        "German",
+        "Danish",
+        "Spanish",
+        "Portuguese",
+        "Basque",
+        "Italian",
+        "French"
+    ],
+    "Group4": [
+        "Zulu",
+        "Xhosa",
+        "Shona",
+        "Swahili",
+        "Uma",
+        "Maori",
+        "Indonesian",
+        "Paite",
+        "Tagalog",
+        "Cebuano",
+        "Malagasy",
+        "Zarma",
+        "Wolof",
+        "Creole",
+        "Somali",
+        "Galela"
+    ]
+}

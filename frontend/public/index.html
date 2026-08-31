@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Readability Test</title>
+  <link rel="stylesheet" href="./styles.css">
+  <!-- Firebase SDKs (compat versions) -->
+  <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-database-compat.js"></script>
+
+</head>
+<body>
+    <div id="mobileWarning" style="display:none; text-align: center; padding: 2em;">
+        <h2>We are sorry :( </h2>
+        <p>Please take the test on your laptop or desktop</p>
+    </div>
+
+    <div id="languageSelectorScreen">
+        <label for="uiLanguageSelector" class="labelFlexColumn">Choose a language
+            <select name="nativeLanguage" id="uiLanguageSelector">
+                <!--
+                <option value="" disabled selected>-- Select a language --</option>
+                <option value="Achuar">Achuar</option>
+                <option value="Afrikaans">Afrikaans</option>
+                <option value="Aguarana">Aguarana</option>
+                <option value="Albanian">Albanian</option>
+                <option value="Aukan">Aukan</option>
+                <option value="Basque">Basque</option>
+                <option value="Campa">Campa</option>
+                <option value="Cebuano">Cebuano</option>
+                <option value="Creole">Creole</option>
+                <option value="Czech">Czech</option>
+                <option value="Danish">Danish</option>
+                <option value="Dutch">Dutch</option>
+                <option value="English">English</option>
+                <option value="French">French</option>
+                <option value="Galela">Galela</option>
+                <option value="German">German</option>
+                <option value="Hungarian">Hungarian</option>
+                <option value="Indonesian">Indonesian</option>
+                <option value="Italian">Italian</option>
+                <option value="Latvian">Latvian</option>
+                <option value="Lithuanian">Lithuanian</option>
+                <option value="Malagasy">Malagasy</option>
+                <option value="Maori">Maori</option>
+                <option value="Nahuatl">Nahuatl</option>
+                <option value="Norwegian">Norwegian</option>
+                <option value="Paite">Paite</option>
+                <option value="Polish">Polish</option>
+                <option value="Portuguese">Portuguese</option>
+                <option value="Qeqchi">Qeqchi</option>
+                <option value="Quichua">Quichua</option>
+                <option value="Romani">Romani</option>
+                <option value="Romanian">Romanian</option>
+                <option value="Serbian">Serbian</option>
+                <option value="Shona">Shona</option>
+                <option value="Shuar">Shuar</option>
+                <option value="Slovak">Slovak</option>
+                <option value="Slovene">Slovene</option>
+                <option value="Somali">Somali</option>
+                <option value="Spanish">Spanish</option>
+                <option value="Swahili">Swahili</option>
+                <option value="Swedish">Swedish</option>
+                <option value="Tagalog">Tagalog</option>
+                <option value="Turkish">Turkish</option>
+                <option value="Uma">Uma</option>
+                <option value="Wolof">Wolof</option>
+                <option value="Xhosa">Xhosa</option>
+                <option value="Zarma">Zarma</option>
+                <option value="Zulu">Zulu</option>
+                 -->
+                <option value="" disabled selected>-- Select a language --</option>
+                <option value="Indonesian">Bahasa Indonesia</option>
+                <option value="Czech">Čeština</option>
+                <option value="Shona">ChiShona</option>
+                <option value="Danish">Dansk</option>
+                <option value="German">Deutsch</option>
+                <option value="English">English</option>
+                <option value="Spanish">Español</option>
+                <option value="French">Français</option>
+                <option value="Croatian">Hrvatski</option>
+                <option value="Italian">Italiano</option>
+                <option value="Swahili">Kiswahili</option>
+                <option value="Lithuanian">Lietuvių</option>
+                <option value="Hungarian">Magyar</option>
+                <option value="Dutch">Nederlands</option>
+                <option value="Norwegian">Norsk</option>
+                <option value="Polish">Polski</option>
+                <option value="Portuguese">Português</option>
+                <option value="Romanian">Română</option>
+                <option value="Albanian">Shqip</option>
+                <option value="Serbian">Srpski</option>
+                <option value="Finnish">Suomi</option>
+                <option value="Swedish">Svenska</option>
+                <option value="Tagalog">Tagalog</option>
+                <option value="Turkish">Türkçe</option>
+                <option value="Icelandic">Íslenska</option>
+            </select>
+        </label>
+        <button id="uiLanguageNextBtn" disabled>Next</button>
+
+        <div class="logo2"></div>
+
+        <h1 class="smallTextTitle">Study on reading comfort across different languages.</h1>
+        <p class="smallText">PhD student: Marta Guidotti, Hasselt University / READSEARCH / PXL-MAD research / FWO
+            <br>Promotor: Prof. dr. Ann Bessemans, Hasselt University / READSEARCH / PXL-MAD research
+            <br>Co-promotor: Prof. dr. Ann Dooms, Vrije Universiteit Brussels            
+        </p>
+    </div>
+
+    <div id="welcomeScreen">
+        <div class="logo">
+        </div>
+
+        <p>Hello,</p>
+        <p>Thank you for your interest in our study which is an academic research project about legibility situated at READSEARCH at Hasselt University and PXL-MAD School of Arts. The research is undertaken by PhD student Marta Guidotti under the supervision of Prof. Ann Bessemans and co-supervision of prof. Ann Dooms.</p>
+        <p>There are more than 500 languages in the world that use the same alphabet. Yet, each of these languages has a specific way of displaying text, resulting in a particular text structure. Through this research we aim to collect information about how language visual diversity affects the reading experience in terms of visual comfort.</p>
+        <p class="bold">If you are a fluent reader in your language, have no severe visual impairment, and are over 18 years old, you can participate in this research.</p>
+        <p class="bold">We recommend that you take the test on your PC, in a place where it is easy and normal for you to concentrate. This is probably sitting at your desk in a quiet room without any distractions (e.g. music, videos, people, phone...).</p>
+        <p>This project has been reviewed and approved by the Social-Societal Ethics Committee (SMEC) of Hasselt University. All data will remain anonymous. Participants may only take the test once. </p>
+        
+        <div class="divider"></div>
+        
+        <p class="smallText">The questionnaire you will answer will generate data useful for the research. These data will be used only for analysis purposes to carry out this research project. All data are collected for scientific purposes such as the study of languages within the reading experience. By proceeding with the test, you voluntarily agree to participate and consent to the analysis and management of the data that will be collected from the questionnaire. However, you are free to discontinue the test whenever you wish. In the questionnaire, no specific personal information is requested, such as name, and exact age. The data collection is completely anonymous. In other words, we do not ask you to submit any personal data at any time during the study.</p>
+        <div class="termsConditionsBox">
+            <label>
+                <input type="checkbox" name="Terms and Conditions" value="agree" class="large-checkbox"/> Check the box if you have read and agree with the 
+            </label>
+            <a class="termsConditions" id="termsConditionsLink"> Terms and Conditions</a>
+        </div>
+        <button id="nextSlideFirst" class="">Proceed</button>
+    </div>
+    <div class="popupWrap" id="termsConditionsPopup" style="display:none;">
+        <div class="popupBox">
+            <h1>Terms and Conditions</h1>
+            <h2>Purpose of the data collection </h2>
+            <p>The legal basis for the processing of your data is in the public interest. This means that the research will hope to lead to an increase in knowledge and insight that benefits society (directly or indirectly). In this study we ask for information about age range, language and reading habits. This data is used only for scientific research. These data are important to understand if there is a relation between languages and visual comfort when we read (legibility) and whether this is affected by/or varies according to individuals. Data is sent over a secure connection, so your data remains completely anonymous.</p>
+            
+            <h2>Requirements for your participation in the study</h2>
+            <div id="termsRequirementsBlock">
+                <p></p>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <h2>Contact details </h2>
+            <p>Hasselt University acts as a controller in the context of this research. More specifically, only the researcher will have access to your data. If you have specific questions about this research, including the processing of your data, and to exercise your rights, please contact Marta Guidotti (marta.guidotti@uhasselt.be). For additional questions about your rights and all other matters relating to the processing of your personal data, you can also contact our data protection officer at any time at dpo@uhasselt.be. This officer independently monitors compliance with the regulations regarding the processing of personal data at UHasselt.</p>
+            
+            <h2>Complaints </h2>
+            <p> You have the right to file a complaint about the processing of your<br>
+                personal data<br>
+                with the Belgian Data Protection Authority:<br>
+                Data Protection Authority<br>
+                Press Street 35, 1000 Brussels<br>
+                02 274 48 00<br>
+                contact@apd-gba.be<br>
+                www.gegevensbeschermingsautoriteit.be<br>
+            </p>
+            <p class="bold">We recommend first contacting our data protection officer in case of complaints, at dpo@uhasselt.be.</b></p>
+            <button id="closeTermsButton">Close Popup</button>
+          </div>
+    </div>
+
+    <div id="demographicsScreen" style="display:none;">
+        <div class="logo" src="./images/Logo_set-row_2025_01.png"> </div>
+
+        <h2>Before we get started, please answer all the questions.</h2>
+        <p>In open text fields, we request you not to introduce personal or sensitive information, such as name, telephone number, email address, health info, etc. in your answers to these questions, in order to be GDPR compliant.</p>
+        <form id="additionalForm">
+
+            <label class="labelFlexColumn" id="nativeLanguagesContainer">What other languages can you read at a basic/expert level? (Exclude your native language)
+                <select name="nativeLanguage" id="nativeLanguage">
+                    <option value="" disabled selected></option>
+                    <option value="Achuar">Achuar</option>
+                    <option value="Afrikaans">Afrikaans</option>
+                    <option value="Aguarana">Aguarana</option>
+                    <option value="Albanian">Albanian</option>
+                    <option value="Aukan">Aukan</option>
+                    <option value="Basque">Basque</option>
+                    <option value="Campa">Campa</option>
+                    <option value="Cebuano">Cebuano</option>
+                    <option value="Creole">Creole</option>
+                    <option value="Croatian">Croatian</option>
+                    <option value="Czech">Czech</option>
+                    <option value="Danish">Danish</option>
+                    <option value="Dutch">Dutch</option>
+                    <option value="English">English</option>
+                    <option value="Finnish">Finnish</option>
+                    <option value="French">French</option>
+                    <option value="Galela">Galela</option>
+                    <option value="German">German</option>
+                    <option value="Hungarian">Hungarian</option>
+                    <option value="Icelandic">Icelandic</option>
+                    <option value="Indonesian">Indonesian</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Latvian">Latvian</option>
+                    <option value="Lithuanian">Lithuanian</option>
+                    <option value="Malagasy">Malagasy</option>
+                    <option value="Maori">Maori</option>
+                    <option value="Nahuatl">Nahuatl</option>
+                    <option value="Norwegian">Norwegian</option>
+                    <option value="Paite">Paite</option>
+                    <option value="Polish">Polish</option>
+                    <option value="Portuguese">Portuguese</option>
+                    <option value="Qeqchi">Qeqchi</option>
+                    <option value="Quichua">Quichua</option>
+                    <option value="Romani">Romani</option>
+                    <option value="Romanian">Romanian</option>
+                    <option value="Serbian">Serbian</option>
+                    <option value="Shona">Shona</option>
+                    <option value="Shuar">Shuar</option>
+                    <option value="Slovak">Slovak</option>
+                    <option value="Slovene">Slovene</option>
+                    <option value="Somali">Somali</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Swahili">Swahili</option>
+                    <option value="Swedish">Swedish</option>
+                    <option value="Tagalog">Tagalog</option>
+                    <option value="Turkish">Turkish</option>
+                    <option value="Uma">Uma</option>
+                    <option value="Wolof">Wolof</option>
+                    <option value="Xhosa">Xhosa</option>
+                    <option value="Zarma">Zarma</option>
+                    <option value="Zulu">Zulu</option>
+                    <option value="Other">Other</option> <!-- to handle -->
+                </select>
+            </label>
+            <label class="labelFlexColumn" id="otherLanguagesContainer">What other languages can you read at a user level? (Exclude your native language)
+                <select name="otherLanguage1" id="otherLanguage1">
+                    <option value="" disabled selected></option>
+                    <option value="Achuar">Achuar</option>
+                    <option value="Afrikaans">Afrikaans</option>
+                    <option value="Aguarana">Aguarana</option>
+                    <option value="Albanian">Albanian</option>
+                    <option value="Aukan">Aukan</option>
+                    <option value="Basque">Basque</option>
+                    <option value="Campa">Campa</option>
+                    <option value="Cebuano">Cebuano</option>
+                    <option value="Creole">Creole</option>
+                    <option value="Croatian">Croatian</option>
+                    <option value="Czech">Czech</option>
+                    <option value="Danish">Danish</option>
+                    <option value="Dutch">Dutch</option>
+                    <option value="English">English</option>
+                    <option value="Finnish">Finnish</option>
+                    <option value="French">French</option>
+                    <option value="Galela">Galela</option>
+                    <option value="German">German</option>
+                    <option value="Hungarian">Hungarian</option>
+                    <option value="Icelandic">Icelandic</option>
+                    <option value="Indonesian">Indonesian</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Latvian">Latvian</option>
+                    <option value="Lithuanian">Lithuanian</option>
+                    <option value="Malagasy">Malagasy</option>
+                    <option value="Maori">Maori</option>
+                    <option value="Nahuatl">Nahuatl</option>
+                    <option value="Norwegian">Norwegian</option>
+                    <option value="Paite">Paite</option>
+                    <option value="Polish">Polish</option>
+                    <option value="Portuguese">Portuguese</option>
+                    <option value="Qeqchi">Qeqchi</option>
+                    <option value="Quichua">Quichua</option>
+                    <option value="Romani">Romani</option>
+                    <option value="Romanian">Romanian</option>
+                    <option value="Serbian">Serbian</option>
+                    <option value="Shona">Shona</option>
+                    <option value="Shuar">Shuar</option>
+                    <option value="Slovak">Slovak</option>
+                    <option value="Slovene">Slovene</option>
+                    <option value="Somali">Somali</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Swahili">Swahili</option>
+                    <option value="Swedish">Swedish</option>
+                    <option value="Tagalog">Tagalog</option>
+                    <option value="Turkish">Turkish</option>
+                    <option value="Uma">Uma</option>
+                    <option value="Wolof">Wolof</option>
+                    <option value="Xhosa">Xhosa</option>
+                    <option value="Zarma">Zarma</option>
+                    <option value="Zulu">Zulu</option>
+                    <option value="Other">Other</option>
+                </select>
+                <button class="moreLanguageButton" id="moreLanguage">+ Add one more language if relevant</button>
+            </label>
+            <label class="labelFlexColumn">What is your age?
+                <select name="ageRange">
+                    <option value="18-25">18-25</option>
+                    <option value="25-40">26-40</option>
+                    <option value="40-60">41-65</option>
+                    <option value="40-60">66+</option>
+                </select>
+            </label>
+            <!-- Books Read -->
+            <label class="labelFlexColumnHorizontal" >
+                I read 
+                <input type="number" name="booksRead" min="0" class="text-input" placeholder="e.g. 3" /> 
+                book(s) in a 
+                <select name="booksTimeframe" class="selectTime">
+                    <option value="week">week</option>
+                    <option value="month">month</option>
+                    <option value="year">year</option>
+                </select>
+            </label>
+            <!-- Academic Reading -->
+            <label class="labelFlexColumn">
+                I read academic texts (articles, study books, manuals...) for my study/work:
+                <label>
+                    <input type="radio" name="academicReading" value="yes" class="large-radio" /> Yes
+                </label>
+                <label>
+                    <input type="radio" name="academicReading" value="no" class="large-radio" /> No
+                </label>
+            </label>
+            <!-- Everyday Reading -->
+            <label class="labelFlexColumn">
+                I read everyday (select one or more):
+                <label>
+                    <input type="checkbox" name="everydayReading" value="news" class="large-checkbox" /> News
+                </label>
+                <label>
+                    <input type="checkbox" name="everydayReading" value="socialMedia" class="large-checkbox" /> Social Media
+                </label>
+                <label>
+                    <input type="checkbox" name="everydayReading" value="other" class="large-checkbox" /> Other
+                    <input type="text" name="everydayReadingOther" class="text-input longer" placeholder="Please specify" />
+                </label>
+            </label>
+            <!-- Graphic Design Involvement -->
+            <label class="labelFlexColumn">
+                Do you study/work/practice in graphic design?
+                <label>
+                    <input type="radio" name="graphicDesign" value="yes" class="large-radio" /> Yes
+                </label>
+                <label>
+                    <input type="radio" name="graphicDesign" value="no" class="large-radio" /> No
+                </label>
+            </label>
+
+        </form>
+        <button id="nextDemographicsButton">Next</button>
+    </div>
+
+    <div id="taskScreen" style="display:none;">
+        <div id="taskTextContent">
+            <p></p>
+            <p></p>
+        </div>
+        <button disabled id="startTaskButton">Start</button>
+    </div>
+
+    <div id="sliderTestScreen" style="display:none;">
+        <div class="sliderHeader">
+            <h2 id="slidersTitle">If needed, use the sliders to make the text more comfortable to read for you.</h2>
+
+            <div class="sliders-box" id="slidersBox">
+                <div class="slider-container" id="lineHeightContainer">
+                    <div class="slider-wrap">
+                        <label for="lineHeight">Line Spacing</label>
+                    </div>
+                    <div class="slider-wrap">
+                        <input type="range" id="lineHeight" min="1" max="1.9" value="1.2" step="0.1" class="slider">
+                        <span id="lineHeightValue" class="slider-number">1.2</span>
+                        <div class="slider-reset" id="lineHeightReset"></div>
+                    </div>            
+                </div>
+                <div class="slider-container" id="wordSpacingContainer">
+                    <div class="slider-wrap">
+                        <label for="wordSpacing">Word Spacing</label> 
+                    </div>
+                    <div class="slider-wrap">
+                        <input type="range" id="wordSpacing" min="-2" max="5" value="0" step="0.1" class="slider">
+                        <span id="wordSpacingValue" class="slider-number">0</span>
+                        <div class="slider-reset" id="wordSpacingReset"></div>
+                    </div>            
+                </div>
+                <div class="slider-container" id="letterSpacingContainer">
+                    <div class="slider-wrap">
+                        <label for="letterSpacing">Letter Spacing</label>
+                    </div>
+                    <div class="slider-wrap">
+                        <input type="range" id="letterSpacing" min="-0.4" max="0.9" value="0" step="0.1" class="slider">
+                        <span id="letterSpacingValue" class="slider-number">0</span>
+                        <div class="slider-reset" id="letterSpacingReset"></div>
+                    </div>            
+                </div>
+            </div>
+        </div>
+        
+        <div class="sliderTestContent" id="sliderTestContent"></div>
+
+        <div class="float-button" id="floatButtonBox">
+        <button id="cleanViewButton">Clean View</button>
+        <button id="proceedPopupButton">Proceed</button>
+        </div>
+    </div>
+    <div class="popupWrap" id="reasonChangePopup" style="display:none;">
+        <div class="popupBox">
+            <p>If you made changes, please describe the reason(s) for these changes <i>(This is optional)</i></p>
+
+            <textarea name="reasonChangeInput" placeholder="Describe it in two sentences"></textarea>
+
+            <button id="nextTextButton">Proceed</button>
+          </div>
+    </div>
+
+    <div id="selectTestScreen" style="display:none;">
+        <h2>Select the texts that visually look similar</h2>
+
+        <div class="selectTextBox">
+            <div class="selectText" id="textLanguage1"></div>
+            <div class="selectText" id="textLanguage2"></div>
+            <div class="selectText" id="textLanguage3"></div>
+            <div class="selectText" id="textLanguage4"></div>
+        </div>
+
+        <div class="float-button">
+          <button id="nextSelectTestButton">Next</button>
+        </div>
+    </div>
+
+    <div id="thankYouScreen" style="display:none;">
+        <h2>Thank you for participating in this study!</h2>
+        <p>😊</p>
+    </div>
+  
+    <script type="module" src="./script.js"></script>
+</body>
+</html>

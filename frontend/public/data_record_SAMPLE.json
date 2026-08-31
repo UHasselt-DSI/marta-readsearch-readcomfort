@@ -1,0 +1,120 @@
+
+{
+  "-ORrTg8z79L49VLrEPV6": {
+    "academicReading": [
+      "yes"
+    ],
+    "ageRange": "25-40",
+    "booksRead": "3",
+    "booksTimeframe": "year",
+    "everydayReading": [
+      "news",
+      "socialMedia",
+      "other"
+    ],
+    "everydayReadingOther": "verseket, magazinokat, redditet és néha Medium-ot.",
+    "graphicDesign": [
+      "yes"
+    ],
+    "nativeLanguage": "Hungarian",
+    "otherLanguages": [
+      "English",
+      "Romanian"
+    ],
+    "sliderSettings": [
+      {
+        "index": "3",
+        "language": "Malagasy",
+        "letterSpacing": "0.5",
+        "lineHeight": "1.75",
+        "reasonText": "",
+        "round": 1,
+        "wordSpacing": "3.3"
+      },
+      {
+        "index": "3",
+        "language": "Swedish",
+        "letterSpacing": "0.4",
+        "lineHeight": "1.75",
+        "reasonText": "Szerintem így jobb sokkal mint ahogy volt!",
+        "round": 2,
+        "wordSpacing": "4.2"
+      },
+      {
+        "index": "2",
+        "language": "Dutch",
+        "letterSpacing": "0",
+        "lineHeight": "1.25",
+        "reasonText": "",
+        "round": 3,
+        "wordSpacing": "0"
+      },
+      {
+        "index": "1",
+        "language": "French",
+        "letterSpacing": "0",
+        "lineHeight": "1.25",
+        "reasonText": "",
+        "round": 4,
+        "wordSpacing": "0"
+      },
+      {
+        "index": "2",
+        "language": "English",
+        "letterSpacing": "0.4",
+        "lineHeight": "1.55",
+        "reasonText": "",
+        "round": 5,
+        "wordSpacing": "3.2"
+      },
+      {
+        "index": "1",
+        "language": "Dutch",
+        "letterSpacing": "0",
+        "lineHeight": "1.25",
+        "reasonText": "",
+        "round": 6,
+        "wordSpacing": "0"
+      },
+      {
+        "index": "2",
+        "language": "Czech",
+        "letterSpacing": "0.3",
+        "lineHeight": "1.85",
+        "reasonText": "",
+        "round": 7,
+        "wordSpacing": "3.8"
+      },
+      {
+        "index": "1",
+        "language": "Czech",
+        "letterSpacing": "0.4",
+        "lineHeight": "1.55",
+        "reasonText": "",
+        "round": 8,
+        "wordSpacing": "3.6"
+      },
+      {
+        "index": "1",
+        "language": "English",
+        "letterSpacing": "0.5",
+        "lineHeight": "1.45",
+        "reasonText": "",
+        "round": 9,
+        "wordSpacing": "3.6"
+      },
+      {
+        "index": "2",
+        "language": "French",
+        "letterSpacing": "0.5",
+        "lineHeight": "1.85",
+        "reasonText": "",
+        "round": 10,
+        "wordSpacing": "1.6"
+      }
+    ],
+    "testType": "slider",
+    "timestamp": "2025-06-03T20:28:01.270Z",
+    "uiLanguage": "Hungarian"
+  }
+}

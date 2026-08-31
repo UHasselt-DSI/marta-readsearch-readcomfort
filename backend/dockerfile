@@ -1,0 +1,36 @@
+# ---------- Build Stage ----------
+FROM golang:1.23-alpine AS builder
+
+# Set destination directory inside container
+WORKDIR /app
+
+# Copy go.mod and go.sum first (for better caching)
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copy the rest of the project files
+COPY . .
+
+# Build the Go app
+RUN CGO_ENABLED=0 GOOS=linux go build -o server main.go
+
+# ---------- Run Stage ----------
+FROM alpine:3.20
+
+WORKDIR /app
+
+# Copy the built binary from the builder stage
+COPY --from=builder /app/server .
+COPY --from=builder /app/languages.json .
+COPY --from=builder /app/firebase-secrets.json .
+COPY --from=builder /app/.env .
+COPY --from=builder /app/language_options.json .
+
+# Set Gin to release mode
+ENV GIN_MODE=release
+
+# Expose port 8090
+EXPOSE 8090
+
+# Start the application
+CMD ["./server"]
